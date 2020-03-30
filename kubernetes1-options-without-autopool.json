@@ -1,0 +1,105 @@
+{
+  "calico": {
+    "calico_ipv4pool_cidr": "192.168.0.0/16",
+    "cni_mtu": 1400,
+    "felix_ipinipenabled": true,
+    "felix_ipinipmtu": 1420,
+    "ip_autodetection_method": "interface=(m-dcos|eth0)",
+    "ipv4pool_ipip": "Always",
+    "typha": {
+      "enabled": false,
+      "replicas": 3
+    }
+  },
+  "etcd": {
+    "5_etcd_nodes": false,
+    "cpus": 0.5,
+    "data_disk": 3072,
+    "disk_type": "ROOT",
+    "mem": 1024,
+    "placement": "",
+    "pre_reserved_role": "*",
+    "wal_disk": 512
+  },
+  "kubernetes": {
+    "audit": {
+      "log_maxage": 30,
+      "log_maxbackup": 10,
+      "log_maxsize": 100,
+      "policy": ""
+    },
+    "authorization_mode": "AlwaysAllow",
+    "control_plane_placement": "[[\"hostname\", \"UNIQUE\"]]",
+    "control_plane_pre_reserved_role": "*",
+    "control_plane_reserved_resources": {
+      "cpus": 1,
+      "disk": 5120,
+      "mem": 2048,
+      "system_cpus": 0.5,
+      "system_mem": 1024
+    },
+    "dcos_token_authentication": false,
+    "high_availability": false,
+    "maximum_container_log_size": 1,
+    "metrics_exporter": {
+      "cpus": 1,
+      "disk": 1024,
+      "enabled": false,
+      "mem": 1024,
+      "port": 9901
+    },
+    "oidc": {
+      "ca_file": "",
+      "client_id": "",
+      "enabled": false,
+      "groups_claim": "",
+      "groups_prefix": "oidc",
+      "issuer_url": "",
+      "required_claim": "",
+      "signing_algs": "RS256",
+      "username_claim": "sub",
+      "username_prefix": "oidc"
+    },
+    "private_node_count": 1,
+    "private_node_placement": "",
+    "private_node_pre_reserved_role": "*",
+    "private_reserved_resources": {
+      "kube_cpus": 1,
+      "kube_disk": 5120,
+      "kube_mem": 1024,
+      "system_cpus": 1,
+      "system_mem": 1024
+    },
+    "proxy": {
+      "override_injection": false
+    },
+    "public_node_count": 0,
+    "public_node_placement": "",
+    "public_node_pre_reserved_role": "slave_public",
+    "public_reserved_resources": {
+      "kube_cpus": 0.5,
+      "kube_disk": 2048,
+      "kube_mem": 512,
+      "system_cpus": 1,
+      "system_mem": 1024
+    },
+    "service_cidr": "10.100.0.0/16"
+  },
+  "service": {
+    "check": {
+      "delaySeconds": 15,
+      "intervalSeconds": 30,
+      "timeoutSeconds": 20
+    },
+    "enable_role_migration": false,
+    "log_level": "DEBUG",
+    "name": "kubernetes-cluster1",
+    "region": "",
+    "role": "",
+    "service_account": "kubernetes-cluster1 ",
+    "service_account_secret": "kubernetes-cluster1/sa",
+    "sleep": 1000,
+    "use_agent_docker_certs": false,
+    "virtual_network_name": "dcos"
+  }
+}

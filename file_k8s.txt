@@ -1,0 +1,11 @@
+Using Kubernetes cluster: kubernetes-cluster1
+deploy (serial strategy) (COMPLETE)
+├─ etcd (serial strategy) (COMPLETE)
+│  └─ etcd-0:[peer] (COMPLETE)
+├─ control-plane (dependency strategy) (COMPLETE)
+│  └─ kube-control-plane-0:[instance] (COMPLETE)
+├─ mandatory-addons (serial strategy) (COMPLETE)
+│  └─ mandatory-addons-0:[instance] (COMPLETE)
+├─ node (dependency strategy) (COMPLETE)
+│  └─ kube-node-0:[kubelet] (COMPLETE)
+└─ public-node (dependency strategy) (COMPLETE)
